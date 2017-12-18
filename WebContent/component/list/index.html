@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>带左右按钮图片弹性滚动（实例化多用）</title>
+<meta name="keywords" content="网页特效,js图片滚动,图片滚动,左右按钮滚动" />
+<meta name="description" content="一款带左右按钮图片弹性滚动MSClass插件应用（实例化多用）网页特效，带左右按钮，弹性左右滑动可多用。">
+<script src="js/MSClass.js" type="text/javascript"></script>
+<style>
+/*科e互联特效基本框架CSS*/
+body, ul, dl, dd, dt, ol, li, p, h1, h2, h3, h4, h5, h6, textarea, form, select, fieldset, table, td, div, input {margin:0;padding:0;-webkit-text-size-adjust: none}
+h1, h2, h3, h4, h5, h6{font-size:12px;font-weight:normal}
+body>div{margin:0 auto}
+div {text-align:left}
+a img {border:0}
+body { color: #333; text-align: center; font: 12px "宋体"; }
+ul, ol, li {list-style-type:none;vertical-align:0}
+a {outline-style:none;color:#535353;text-decoration:none}
+a:hover { color: #D40000; text-decoration: none}
+.button {display: inline-block;zoom: 1; *display: inline;vertical-align: baseline;margin: 0 2px;outline: none;cursor: pointer;text-align: center;text-decoration: none;font: 14px/100% Arial, Helvetica, sans-serif;padding:0.25em 0.6em 0.3em;text-shadow: 0 1px 1px rgba(0,0,0,.3);-webkit-border-radius: .5em; -moz-border-radius: .5em;border-radius: .5em;-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.red {color: #faddde;border: solid 1px #980c10;background: #d81b21;background: -webkit-gradient(linear, left top, left bottom, from(#ed1c24), to(#A51715));background: -moz-linear-gradient(top,  #ed1c24,  #A51715);filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ed1c24', endColorstr='#aa1317');
+}
+.red:hover { background: #b61318; background: -webkit-gradient(linear, left top, left bottom, from(#c9151b), to(#a11115)); background: -moz-linear-gradient(top,  #c9151b,  #a11115); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#c9151b', endColorstr='#a11115'); color:#fff;}
+.red:active {color: #de898c;background: -webkit-gradient(linear, left top, left bottom, from(#aa1317), to(#ed1c24));background: -moz-linear-gradient(top,  #aa1317,  #ed1c24);filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#aa1317', endColorstr='#ed1c24');}
+.cor_bs,.cor_bs:hover{color:#ffffff;}
+.keBody{background:url(images/bodyBg.jpg) repeat #333;}
+.keTitle{height:100px; line-height:100px; font-size:30px; font-family:'微软雅黑'; color:#FFF; text-align:center; background:url(images/bodyBg3.jpg) repeat-x bottom left; font-weight:normal}
+.kePublic{background:#FFF; padding:50px; height:390px;}
+.keBottom{color:#FFF; padding-top:25px; line-height:28px; text-align:center; font-family:'微软雅黑'; background:url(images/bodyBg2.jpg) repeat-x top left; padding-bottom:25px}
+.keTxtP{font-size:16px; color:#ffffff;}
+.keUrl{color:#FFF; font-size:30px;}
+.keUrl:hover{ text-decoration: underline; color: #FFF; }
+/*科e互联特效基本框架CSS结束，应用特效时，以上样式可删除*/
+/* 效果CSS开始 */
+#CSSBox{float:left;width:680px;height:140px; border:1px solid #630; margin:0 auto;overflow:hidden;background-color:#ffffff;}
+#CSSBox ul li{ float:left; list-style:none; border:0px solid red; margin:10px 10px;}
+#CSSBox ul li span{ display:block; text-align:center; font-size:12px; padding-top:12px;}
+#LeftButton{cursor:hand;margin:5px;height:140px;width:20px;float:left;background:url('images/left.gif') center center no-repeat;}
+#RightButton{cursor:hand;margin:5px;height:140px;width:20px;float:left;background:url('images/right.gif') center center no-repeat;}
+#wrapper{width:585px; margin:0 auto}
+#ProductShow{width:305px;height:245px;text-align:center;border:1px solid #c0c0c0;margin:5px;}
+
+#CSSBox2{float:left;width:680px;height:140px; border:1px solid #630; margin:0 auto;overflow:hidden;background-color:#ffffff; margin-top:15px;}
+#CSSBox2 ul li{ float:left; list-style:none; border:0px solid red; margin:10px 10px;}
+#CSSBox2 ul li span{ display:block; text-align:center; font-size:12px; padding-top:12px;}
+#LeftButton2{cursor:hand;margin:5px;height:140px;width:20px;float:left;background:url('images/left.gif') center center no-repeat;}
+#RightButton2{cursor:hand;margin:5px;height:140px;width:20px;float:left;background:url('images/right.gif') center center no-repeat;}
+#wrapper2{width:585px; margin:0 auto}
+#ProductShow2{width:305px;height:245px;text-align:center;border:1px solid #c0c0c0;margin:5px;}
+</style>
+</head>
+<body class="keBody">
+<h1 class="keTitle">带左右按钮图片弹性滚动（实例化多用）</h1>
+<div class="kePublic">
+<!--效果html开始-->
+<div id="wrapper">
+<div id="LeftButton"></div>
+<div id="CSSBox">
+	<ul id="CSSContent">
+  		<li><a href="http://www.internetke.com" target="_blank"><img src="images/img01.jpg" width="150" height="120" title="扁平化图标"/></a><span><a href="http://www.internetke.com" target="_blank">圣诞扁平化01</a></span></li>
+  		<li><a href="http://www.internetke.com" target="_blank"><img src="images/img02.jpg"  width="150" height="120" title="扁平化图标"/></a><span><a href="http://www.internetke.com" target="_blank">圣诞扁平化02</a></span></li>
+ 		<li><a href="http://www.internetke.com" target="_blank"><img src="images/img03.jpg"  width="150" height="120" title="扁平化图标"/></a><span><a href="http://www.internetke.com" target="_blank">圣诞扁平化03</a></span></li>
+  		<li><a href="http://www.internetke.com" target="_blank"><img src="images/img04.jpg"  width="150" height="120" title="扁平化图标"/></a><span><a href="http://www.internetke.com" target="_blank">圣诞扁平化04</a></span></li>
+	</ul>
+</div>
+<div id="RightButton"></div>
+</div>
+<div style="clear:both"></div>
+<div id="wrapper2">
+<div id="LeftButton2"></div>
+<div id="CSSBox2">
+	<ul id="CSSContent2">
+  		<li><a href="http://www.internetke.com" target="_blank"><img src="images/pic01.jpg" width="150" height="120" title="可爱牛图标01"/></a><span><a href="http://www.internetke.com" target="_blank">可爱牛图标01</a></span></li>
+  		<li><a href="http://www.internetke.com" target="_blank"><img src="images/pic02.jpg"  width="150" height="120" title="可爱牛图标02"/></a><span><a href="http://www.internetke.com" target="_blank">可爱牛图标02</a></span></li>
+ 		<li><a href="http://www.internetke.com" target="_blank"><img src="images/pic03.jpg"  width="150" height="120" title="可爱牛图标03"/></a><span><a href="http://www.internetke.com" target="_blank">可爱牛图标03</a></span></li>
+  		<li><a href="http://www.internetke.com" target="_blank"><img src="images/pic04.jpg"  width="150" height="120" title="可爱牛图标04"/></a><span><a href="http://www.internetke.com" target="_blank">可爱牛图标04</a></span></li>
+	</ul>
+</div>
+<div id="RightButton2"></div>
+</div>
+<script type="text/javascript">
+new Marquee(
+{
+	MSClass	  : ["CSSBox","CSSContent"],
+	Direction : 2,
+	PrevBtnID : "LeftButton",
+	NextBtnID : "RightButton",
+	Step	  : 0.3,
+	Width	  : 510,
+	Height	  : 180,
+	Timer	  : 20,
+	DelayTime : 3000,
+	WaitTime  : 3,
+	ScrollStep: 170,
+	SwitchType: 0,
+	AutoStart : true
+});
+</script>
+<script type="text/javascript">
+new Marquee(
+{
+	MSClass	  : ["CSSBox2","CSSContent2"],
+	Direction : 2,
+	PrevBtnID : "LeftButton2",
+	NextBtnID : "RightButton2",
+	Step	  : 0.3,
+	Width	  : 510,
+	Height	  : 180,
+	Timer	  : 20,
+	DelayTime : 3000,
+	WaitTime  : 3,
+	ScrollStep: 170,
+	SwitchType: 0,
+	AutoStart : true
+});
+</script>
+<!--效果html结束-->
+</div>
+<div class="keBottom">
+<p class="keTxtP">科e互联网页特效集锦---更多特效请访问 <a class="keUrl" href="http://www.internetke.com" target="_blank">www.internetke.com</a></p>
+<p class="keTxtP">本站导航：
+<a href="http://www.internetke.com/" target="_blank" class="cor_bs">网站建设</a> | 
+<a href="http://www.internetke.com/material/" target="_blank" class="cor_bs">网页素材</a> | 
+<a href="http://www.internetke.com/effects/" target="_blank" class="cor_bs">网页特效</a> | 
+<a href="http://www.internetke.com/share/" target="_blank" class="cor_bs">设计分享</a> | 
+<a href="http://www.internetke.com/tutorial/" target="_blank" class="cor_bs">建站教程</a> | 
+<a href="http://www.internetke.com/model/" target="_blank" class="cor_bs">网站模版</a> | 
+<a href="http://www.internetke.com/appreciate/" target="_blank" class="cor_bs">酷站赏析</a>
+</p>
+<p class="keTxtP">＊尊重他人劳动成果，转载请自觉注明出处！注：此代码为【科e整理/原创特效】仅供学习交流，请勿用于商业用途。
+<a target="_blank" href="http://wp.qq.com/wpa/qunwpa?idkey=a7df3558c291e0407375b9ad649d96a6e507286ffeb0650c65a221d1500a0779" class="button red" title="北京网站建设,网页特效QQ交流群-科e互联">加入QQ交流群</a></p>
+</div>
+</body>
+</html>

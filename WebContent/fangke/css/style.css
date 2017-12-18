@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* sliderbox */
+.sliderbox{width:780px;position:relative;padding:10px;margin-top:16px;margin-left:20px;border:1px solid #ede9e9;}
+.btn{position:absolute;display:none;padding-top:200px;width:22px;height:205px;cursor:pointer;text-indent:-999em;}
+.pre{background:url(../images/left.png) no-repeat 0 200px;left:20px;}
+.next{background:url(../images/right.png) no-repeat 0 200px;right:30px;}
+#ztbox{width:100%;position:relative;height:120px;}
+.spic{width:760px;position:relative;padding-top:6px;height:78px;}
+#left{width:13px;height:43px;float:left;top:20px;position:absolute;left:4px;cursor:pointer;background:url(../images/left.gif) no-repeat;}
+#right{width:13px;height:43px;right:4px;top:20px;position:absolute;cursor:pointer;background:url(../images/right.gif) no-repeat;}
+#conter{margin-left:20px;width:528px;position:relative;height:90px;float:left;display:inline;overflow:hidden;}
+#conter .txt{display:none;}
+#conter ul{width:auto;height:76px;overflow:hidden;top:0px;left:0px;position:absolute;}
+#conter li{width:82px;cursor:pointer;height:76px;float:left;border:1px solid #eaeaea;display:inline;margin:0 0 0 4px;}
+#conter li b,#conter li strong{font-weight:normal;}
+#conter li.on{border:1px solid #898989;}
+#conter li.on span{background:#898989;color:#fff;}
+#conter li img{width:82px;height:60px;float:left;overflow:hidden;}
+#conter li span{display:block;width:100%;line-height:17px;color:#797979;float:left;height:17px;overflow:hidden;background:#eaeaea;text-align:center;}
+#scroll{background:url(../images/line.gif) repeat-x left bottom;width:760px;height:0px;left:0px;bottom:14px;cursor:pointer;position:absolute; }
+#scroll span{width:142px;height:13px;left:0px;bottom:0px;cursor:pointer;position:absolute;background:url(../images/scrollBg.png) no-repeat;}
+.bpic{width:100%;margin:0 auto 0 auto;}
+
+.bigpic{width:100%;position:relative;margin-bottom:10px;}
+.intro{width:100%;height:52px;position:absolute;left:0;bottom:4px;}
+.bg{background:#000;filter:alpha(opacity=40);opacity:0.4;z-index:0;width:100%;height:52px;position:absolute;bottom:0;}
+.txt{position:absolute;padding-left:1%;width:99%;top:5px;z-index:10;color:#fff;}
+.txt h2{width:100%;float:left;font-size:16px;padding-bottom:4px;}
+.txt p{width:100%;float:left;}
+.bclose{position:absolute;right:10px;top:10px;z-index:11;cursor:pointer;color:#fff;}

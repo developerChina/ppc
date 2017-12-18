@@ -1,0 +1,103 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+a {
+	color: #007bc4 /*#424242*/;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline
+}
+
+#main {
+	width: 910px;
+	min-height: 600px;
+	margin: 10px auto 0 auto;
+	background: #fff;
+	-moz-border-radius: 12px;
+	-khtml-border-radius: 12px;
+	-webkit-border-radius: 12px;
+	border-radius: 12px;
+}
+
+h2.top_title {
+	margin: 4px 20px;
+	padding-top: 15px;
+	padding-left: 20px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #d3d3d3;
+	font-size: 18px;
+	color: #a84c10;
+}
+
+#timeline {
+	width: 760px;
+	height: 300px;
+	overflow: hidden;
+	margin: 5px auto;
+	position: relative;
+	background:
+		url('http://demo.lanrenzhijia.com/2014/time0824/images/dot.gif') left
+		45px repeat-x;
+}
+
+#dates {
+	width: 760px;
+	height: 60px;
+	overflow: hidden;
+}
+
+#dates li {
+	list-style: none;
+	float: left;
+	width: 160px;
+	height: 50px;
+	font-size: 12px;
+	text-align: center;
+	background:
+		url('http://demo.lanrenzhijia.com/2014/time0824/images/biggerdot.png')
+		center bottom no-repeat;
+}
+
+#dates .selected {
+	font-size: 18px;
+}
+
+#dates a {
+	line-height: 38px;
+	padding-bottom: 10px;
+}
+
+
+
+#issues {
+	width: 760px;
+	height: 360px;
+	overflow: hidden;
+}
+
+#issues li {
+	width: 760px;
+	height: 360px;
+	list-style: none;
+	float: left;
+}
+
+#issues li h1 {
+	color: #ffcc00;
+	font-size: 15px;
+	margin: 5px 0;
+	text-shadow: #000 1px 1px 2px;
+}
+
+#issues li p {
+	font-size: 14px;
+	margin-right: 70px;
+	margin: 10px;
+	font-weight: normal;
+	line-height: 22px;
+}

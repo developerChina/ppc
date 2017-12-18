@@ -1,0 +1,143 @@
+.wrap{
+	width: 100%;
+	height: 100vh;
+	background: url(images/bg.png);
+	background-size: 100% 100%;
+	position: relative;
+}
+.head{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-width: 800px;
+	height: 66px;
+	padding-left: 20px;
+	font: 28px/66px "";
+	color: #fff;
+}
+.content{
+	width: 950px;
+	height: 450px;
+	box-sizing: border-box;
+	position: absolute;
+	left: -200px;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto auto;
+}
+.content .left{
+	width: 550px;
+	height: 450px;
+	margin-right: 150px;
+	border-right: 5px solid #8cbed7;
+}
+.left .title{
+	height: 48px;
+	font: bold 20px/48px "";
+	color: #175cb4;
+}
+.left .title span:nth-child(1){
+	width: 12px;
+	height: 24px;
+	background: #2f4f7e;
+	margin: 12px 12px 0 0;
+}
+.left .photoArea{
+	padding-left: 30px;
+	margin-bottom: 20px;
+}
+.photoArea div{
+	width: 162px;
+	height: 208px;
+	box-sizing: border-box;
+	border: 2px solid #85ac9f;
+	position: relative;
+}
+.photoArea div:nth-child(1){
+	margin-right: 50px;
+}
+.photoArea img{
+	display: block;
+	width: 130px;
+	height: 182px;
+	margin: 0 auto;
+}
+.photoArea p{
+	text-align: center;
+	font: 16px/22px "";
+	color: #f20f0f;
+}
+.infoArea{
+	color: #8a8782;
+	font: 16px/32px "";
+}
+.infoArea .underline{
+	font: 16px "";
+	height: 24px;
+	display: inline-block;
+	vertical-align: middle;
+	width: 100px;
+	color: #8a8782;
+}
+.infoArea .sex{
+	width: 120px;
+}
+.infoArea .ID{
+	width: 260px;
+}
+.infoArea .address{
+	width: 480px;
+}
+.infoArea .text{
+	width: 150px;
+	height: 28px;
+	font: 16px/28px "";
+	box-sizing: border-box;
+	text-indent: 5px;
+	border: 1px solid #8a8782;
+	border-radius: 6px 6px;
+}
+.page{
+	width: 250px;
+	height: 60px;
+	margin-top: 50px;
+}
+.page .prevpage{
+	width: 89px;
+	height: 89px;
+	background: url(images/prevpage.png) no-repeat;
+	margin-right: 20px;
+}
+.page .nextpage{
+	width: 89px;
+	height: 89px;
+	background: url(images/nextpage1.png) no-repeat;
+}
+.content .right{
+	width: 250px;
+	box-sizing: border-box;
+	padding-top: 50px;
+}
+.right div:nth-child(2){
+	width: 192px;
+	height: 71px;
+	background: url(images/down-icon.png) no-repeat center center;
+	margin: 15px 0;
+}
+
+.foot{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	min-width: 800px;
+	height: 62px;
+	padding-left: 1%;
+	font: bold 24px/62px "宋体";
+	color: #fff;
+}
+
+
+

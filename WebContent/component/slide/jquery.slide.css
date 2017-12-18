@@ -1,0 +1,303 @@
+.jhp {
+	padding: 5px 0px;
+	text-align: center;
+	font-size: 12px;
+	clear: both;
+	margin: 0px;
+}
+
+.d_foot_o {
+	text-align: center;
+	margin: 1px 0 10px 0;
+	clear: both;
+	margin-top: -100px;
+}
+
+.border-table {
+	border-collapse: collapse;
+	border: none;
+}
+
+.border-table td {
+	border: solid #ccc 1px;
+}
+
+input[type=text], input[type=password] {
+	font-size: 13px;
+	min-height: 32px;
+	margin: 0;
+	padding: 7px 8px;
+	outline: none;
+	color: #333;
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-position: right center;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	transition: all 0.15s ease-in;
+	-webkit-transition: all 0.15s ease-in 0;
+	vertical-align: middle;
+}
+
+.lft {
+	float: left;
+	display: inline;
+}
+
+.rgt {
+	float: right;
+	display: inline;
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 1px;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+* html .clearfix {
+	zoom: 1;
+} /* IE6 */
+*:first-child+html .clearfix {
+	zoom: 1;
+}
+
+.layout {
+	padding: 0 0 0 40px;
+}
+
+.layout  h2 {
+	margin: 20px 0 20px 0;
+	font-size: 14px;
+}
+
+/*-------- 淡隐淡现选项卡 --------*/
+.row2 {
+	border: 1px solid #E1E1E1;
+	position: relative;
+	width: 300px;
+}
+
+.row2 .JQ-slide {
+	background: url(images/side_bg1.jpg) no-repeat center top;
+}
+
+.row2 .JQ-slide-nav {
+	float: none;
+	overflow: hidden;
+	zoom: 1;
+	padding: 15px;
+}
+
+.row2 .JQ-slide-nav li {
+	float: left;
+	display: inline;
+	background: url(images/slide_navbg.gif) no-repeat -70px 0;
+	width: 69px;
+	height: 23px;
+	text-align: center;
+	color: 6b6b6b;
+	font-weight: bold;
+	text-align: center;
+	line-height: 22px;
+	cursor: pointer;
+	margin-right: 5px;
+}
+
+.row2 .JQ-slide-nav li.on {
+	background-position: 0 0;
+	color: white;
+}
+
+.row2 .JQ-slide-nav li.on a:link, .row2 .JQ-slide-nav li.on a:visited,
+	.row2 .JQ-slide-nav li.on a:hover, .row2 .JQ-slide-nav li.on a:active {
+	color: white;
+}
+
+.row2 .JQ-slide-content {
+	position: relative;
+	overflow: hidden;
+	width: 300px;
+	height: 120px;
+}
+
+.row2 .JQ-slide-content .newsList {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: white;
+}
+/*----------- 图片banner特效左右滚动 ------------*/
+/* w_ctr */
+.w_ctr .JQ-slide {
+	width: 305px;
+	height: 190px;
+	overflow: hidden;
+	position: relative;
+}
+
+.w_ctr .JQ-slide-content {
+	position: absolute;
+} /*必须要的元素*/
+.w_ctr .JQ-slide-content li {
+	width: 305px;
+	height: 190px;
+	float: left;
+	display: inline;
+	position: relative;
+}
+
+.w_ctr .JQ-slide-content li img {
+	width: 305px;
+	height: 190px;
+}
+
+.w_ctr .JQ-slide-content li span {
+	display: block;
+	background: black;
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 0 14px;
+	line-height: 28px;
+	position: absolute;
+	bottom: 5px;
+	left: 0;
+	z-index: 10;
+	width: 275px;
+	overflow: hidden;
+	filter: alpha(opacity = 50);
+	-moz-opacity: 0.5;
+	-khtml-opacity: 0.5;
+	opacity: 0.5;
+}
+
+.w_ctr .JQ-slide-nav {
+	position: absolute;
+	bottom: 14px;
+	right: 8px;
+	z-index: 30;
+}
+
+.w_ctr .JQ-slide-nav li {
+	float: left;
+	display: inline;
+	background: url(images/focus_li.png) no-repeat;
+	width: 10px;
+	height: 10px;
+	text-indent: -999em;
+	overflow: hidden;
+	cursor: pointer;
+	margin-right: 5px;
+}
+
+.w_ctr .JQ-slide-nav li.on {
+	background-position: -15px 0;
+}
+
+/*------ 图片左右滚动 ---------*/
+/* hot picture */
+.hotPic {
+	margin: 0 0 0 40px;
+}
+
+.hotPic .JQ-slide {
+	position: relative;
+	width: 880px;
+	height: 142px;
+	margin: 0 0 15px 0;
+	background: #f9f9f9;
+	padding: 10px 35px;
+}
+
+.hotPic .JQ-slide .wrap {
+	width: 810px;
+	height: 142px;
+	overflow: hidden;
+	position: relative;
+}
+
+.hotPic .JQ-slide-content {
+	position: absolute;
+} /*必须要的元素*/
+.hotPic .imgList li {
+	width: 152px;
+	margin: 0 5px;
+}
+
+.hotPic .imgList img {
+	width: 140px;
+	height: 100px;
+}
+
+.hotPic .imgList .txt {
+	height: 30px;
+	line-height: 30px;
+}
+
+.hotPic .JQ-slide-nav a {
+	display: block;
+	z-index: 99;
+	width: 48px;
+	height: 48px;
+	overflow: hidden;
+	text-indent: -999em;
+	text-decoration: none;
+	position: absolute;
+	top: 40px;
+	background: url(images/arrow_pic.png) no-repeat;
+}
+
+.hotPic .JQ-slide-nav a.prev {
+	left: -20px;
+	background-position: 0 0;
+}
+
+.hotPic .JQ-slide-nav a.prev:hover {
+	background-position: -100px 0;
+}
+
+.hotPic .JQ-slide-nav a.next {
+	right: -20px;
+	background-position: -50px 0;
+}
+
+.hotPic .JQ-slide-nav a.next:hover {
+	background-position: -150px 0;
+}
+/* imgList */
+.imgList {
+	float: none;
+	overflow: hidden;
+	zoom: 1
+}
+
+.imgList li {
+	float: left;
+	display: inline;
+	overflow: hidden;
+}
+
+.imgList li a {
+	display: block;
+}
+
+.imgList li .img {
+	border: 1px solid #d8d8d8;
+	padding: 5px;
+}
+
+.imgList li a.img:hover {
+	border-color: #b70000;
+}
+
+.imgList li .txt {
+	text-align: center;
+	overflow: hidden;
+}

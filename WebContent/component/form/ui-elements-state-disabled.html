@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Modern Forms </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/modernforms.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+    </head>
+    <body class="mdn-bg">
+        <div class="modern-forms">
+        	<div class="modern-container mc2">
+                <form>
+                    <fieldset>
+                        <div class="form-row">
+                            <div class="col col-6">
+                                <div class="field-group">
+                                    <input type="text" class="mdn-input" placeholder="Placeholder" disabled>
+                                    <label class="mdn-label">Disabled Input</label>
+                                    <span class="mdn-bar"></span>
+                                </div>
+                            </div><!-- end col-6 -->
+                            <div class="col col-6">
+                                <div class="field-group mdn-select">
+                                    <select name="select" disabled>
+                                        <option value="">Choose option</option>
+                                        <option value="samsung">Samsung</option>
+                                        <option value="xiaomi">Xiaomi</option>
+                                        <option value="apple">Apple</option>
+                                        <option value="nokia">Nokia</option>
+                                        <option value="sony">Sony</option>
+                                        <option value="lg">LG</option>
+                                    </select>
+                                    <label class="mdn-label">Disabled Select</label>
+                                    <span class="mdn-bar"></span>
+                                </div>  
+                            </div><!-- end col-6 -->
+                        </div><!-- end form-row -->
+                                                                        
+                    </fieldset>
+                        
+                    <fieldset>
+                        <div class="mdn-group">
+                            <label class="field-group mdn-upload">
+                                <input type="file" class="mdn-file" name="file1" id="file1" 
+                                onChange="document.getElementById('fileinput1').value = this.value;" disabled>
+                                <input type="text" class="mdn-input" id="fileinput1" placeholder="no file selected" readonly>
+                                <label class="mdn-label">Disabled file uploader</label>
+                                <span class="mdn-bar"></span>
+                                <span class="mdn-button btn-primary"> Choose File </span>                            
+                          </label>
+                        </div><!-- end .mdn-group section -->                        
+                        <div class="field-group">
+                            <textarea class="mdn-textarea" placeholder="Enter Comments" disabled></textarea>
+                            <label class="mdn-label">Disabled Textarea</label>
+                            <span class="mdn-bar"></span>
+                        </div><!-- end mdn-group -->
+                        <div class="field-group mdn-select-multiple">
+                            <select  name="multiselect" multiple="multiple" disabled>
+                                <option value="Albania">Albania</option>
+                                <option value="Algeria">Algeria</option>
+                                <option value="Andorra">Andorra</option>
+                                <option value="Angola">Angola</option>
+                                <option value="Anguilla">Anguilla</option>
+                                <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                                <option value="Argentina">Argentina</option>                           
+                            </select>
+                            <label class="mdn-label">Multiple Select</label>
+                            <span class="mdn-bar"></span>
+                        </div><!-- end mdn-group -->                                                 
+                    </fieldset>
+                        
+                    <fieldset>
+                        <div class="mdn-section">
+                            <div class="mdn-label-pos block-label"><label class="mdn-label">Disabled Checkboxes</label></div>
+                            <div class="form-row">
+                                <div class="col col-4">
+                                    <div class="mdn-group block-group">
+                                        <label class="mdn-option">
+                                            <input type="checkbox" disabled>
+                                            <span class="mdn-checkbox"></span> 
+                                            <span class="option-label">Samsung</span>                                       
+                                        </label>
+                                        <label class="mdn-option">
+                                            <input type="checkbox" disabled>
+                                            <span class="mdn-checkbox"></span> 
+                                            <span class="option-label">Huawei</span>                                  
+                                        </label>
+                                        <label class="mdn-option">
+                                            <input type="checkbox" checked disabled>
+                                            <span class="mdn-checkbox"></span> 
+                                            <span class="option-label">Apple</span>                             
+                                        </label>
+                                        <label class="mdn-option">
+                                            <input type="checkbox" checked disabled>
+                                            <span class="mdn-checkbox"></span> 
+                                            <span class="option-label"> LG </span>                                  
+                                        </label>
+                                    </div><!-- end .mdn-group section -->
+                                </div><!-- end col-4 -->
+                                <div class="col col-4">
+                                    <div class="mdn-group block-group">
+                                        <label class="mdn-option">
+                                            <input type="checkbox" disabled>
+                                            <span class="mdn-checkbox"></span> 
+                                            <span class="option-label">Snapdragon</span>                                       
+                                        </label>
+                                        <label class="mdn-option">
+                                            <input type="checkbox" disabled>
+                                            <span class="mdn-checkbox"></span> 
+                                            <span class="option-label">MediaTek</span>                                  
+                                        </label>
+                                        <label class="mdn-option">
+                                            <input type="checkbox" checked disabled>
+                                            <span class="mdn-checkbox"></span> 
+                                            <span class="option-label">Hisilicon</span>                             
+                                        </label>
+                                        <label class="mdn-option">
+                                            <input type="checkbox" checked disabled>
+                                            <span class="mdn-checkbox"></span> 
+                                            <span class="option-label">Exynos</span>                                  
+                                        </label>
+                                    </div><!-- end .mdn-group section -->
+                                </div><!-- end col-4 -->
+                                <div class="col col-4">
+                                    <div class="mdn-group block-group">
+                                        <label class="mdn-option option-tick">
+                                            <input type="checkbox" disabled>
+                                            <span class="mdn-checkbox"></span> 
+                                            <span class="option-label">Galaxy S7</span>                                       
+                                        </label>
+                                        <label class="mdn-option option-tick">
+                                            <input type="checkbox" disabled>
+                                            <span class="mdn-checkbox"></span> 
+                                            <span class="option-label">Xperia Z6</span>                                  
+                                        </label>
+                                        <label class="mdn-option option-tick">
+                                            <input type="checkbox" checked disabled>
+                                            <span class="mdn-checkbox"></span> 
+                                            <span class="option-label">iPhone 7</span>                             
+                                        </label>
+                                        <label class="mdn-option option-tick">
+                                            <input type="checkbox" checked disabled>
+                                            <span class="mdn-checkbox"></span> 
+                                            <span class="option-label">LG G5</span>                                  
+                                        </label>
+                                    </div><!-- end .mdn-group section -->
+                                </div><!-- end col-4 -->                            
+                            </div><!-- end form-row -->
+                        </div>                           
+                    </fieldset>  
+                        
+                    <fieldset>
+                        <div class="mdn-section">
+                            <div class="mdn-label-pos block-label"><label class="mdn-label">Disabled Radios</label></div>
+                            <div class="form-row">
+                                <div class="col col-4">
+                                    <div class="mdn-group block-group">
+                                        <label class="mdn-option">
+                                            <input type="radio" name="radio1" disabled>
+                                            <span class="mdn-radio"></span> 
+                                            <span class="option-label"> Mastercard </span>                                  
+                                        </label>
+                                        <label class="mdn-option">
+                                            <input type="radio" name="radio1" disabled>
+                                            <span class="mdn-radio"></span> 
+                                            <span class="option-label"> Payoneer </span>                                  
+                                        </label>
+                                        <label class="mdn-option">
+                                            <input type="radio" name="radio1" disabled>
+                                            <span class="mdn-radio"></span> 
+                                            <span class="option-label"> Paypal </span>                                    
+                                        </label>
+                                        <label class="mdn-option">
+                                            <input type="radio" name="radio1" checked disabled>
+                                            <span class="mdn-radio"></span> 
+                                            <span class="option-label"> Visa </span>                                    
+                                        </label>
+                                    </div><!-- end .mdn-group section -->
+                                </div><!-- end col-4 -->
+                                <div class="col col-4">
+                                    <div class="mdn-group block-group">
+                                        <label class="mdn-option">
+                                            <input type="radio" name="radio2" disabled>
+                                            <span class="mdn-radio"></span> 
+                                            <span class="option-label"> Discover </span>                                  
+                                        </label>
+                                        <label class="mdn-option">
+                                            <input type="radio" name="radio2" disabled>
+                                            <span class="mdn-radio"></span> 
+                                            <span class="option-label"> 2Checkout </span>                                  
+                                        </label>
+                                        <label class="mdn-option">
+                                            <input type="radio" name="radio2" disabled>
+                                            <span class="mdn-radio"></span> 
+                                            <span class="option-label"> Maestro </span>                                    
+                                        </label>
+                                        <label class="mdn-option">
+                                            <input type="radio" name="radio2" checked disabled>
+                                            <span class="mdn-radio"></span> 
+                                            <span class="option-label">Payza </span>                                    
+                                        </label>
+                                    </div><!-- end .mdn-group section -->
+                                </div><!-- end col-4 -->
+                                <div class="col col-4">
+                                    <div class="mdn-group block-group">
+                                        <label class="mdn-option">
+                                            <input type="radio" name="radio3" disabled>
+                                            <span class="mdn-radio"></span> 
+                                            <span class="option-label"> Webmoney </span>                                  
+                                        </label>
+                                        <label class="mdn-option">
+                                            <input type="radio" name="radio3" disabled>
+                                            <span class="mdn-radio"></span> 
+                                            <span class="option-label"> Bitcoin </span>                                  
+                                        </label>
+                                        <label class="mdn-option">
+                                            <input type="radio" name="radio3" disabled>
+                                            <span class="mdn-radio"></span> 
+                                            <span class="option-label"> Skrill </span>                                    
+                                        </label>
+                                        <label class="mdn-option">
+                                            <input type="radio" name="radio3" checked disabled>
+                                            <span class="mdn-radio"></span> 
+                                            <span class="option-label"> Epay </span>                                    
+                                        </label>
+                                    </div><!-- end .mdn-group section -->
+                                </div><!-- end col-4 -->                            
+                            </div><!-- end form-row -->
+                        </div>                           
+                    </fieldset>  
+                        
+                    <fieldset>
+                        <div class="mdn-section">
+                            <div class="mdn-label-pos block-label"><label class="mdn-label"> Disabled Toggle Switches </label></div>
+                            <div class="form-row">
+                                <div class="col col-4">
+                                    <div class="mdn-group block-group">
+                                        <label class="mdn-switch">
+                                            <input type="checkbox" checked disabled>
+                                            <span class="switch-toggle"></span>
+                                            <span class="switch-label">Accer</span>
+                                        </label>                                        
+                                        <label class="mdn-switch">
+                                            <input type="checkbox" disabled>
+                                            <span class="switch-toggle"></span>
+                                            <span class="switch-label">Dell</span>
+                                        </label>
+                                        <label class="mdn-switch">
+                                            <input type="checkbox" disabled>
+                                            <span class="switch-toggle"></span>
+                                            <span class="switch-label">HP</span>
+                                        </label>
+                                    </div><!-- mdn-group -->
+                                </div><!-- end col-4 -->
+                                <div class="col col-4">
+                                    <div class="mdn-group block-group">
+                                        <label class="mdn-switch morph-switch">
+                                            <input type="radio" name="switch" checked disabled>
+                                            <span class="switch-toggle"></span>
+                                            <span class="switch-label">iPad Air</span>
+                                        </label>
+                                        <label class="mdn-switch morph-switch">
+                                            <input type="radio" name="switch" disabled>
+                                            <span class="switch-toggle"></span>
+                                            <span class="switch-label">Pixel C</span>
+                                        </label>                                        
+                                        <label class="mdn-switch morph-switch">
+                                            <input type="radio" name="switch" disabled>
+                                            <span class="switch-toggle"></span>
+                                            <span class="switch-label">Yoga</span>
+                                        </label>
+                                    </div><!-- mdn-group --> 
+                                </div><!-- end col-4 -->
+                                <div class="col col-4">
+                                    <div class="mdn-group block-group">
+                                        <label class="mdn-switch modern-switch">
+                                            <input type="radio" name="switchr" checked disabled>
+                                            <span class="switch-toggle"></span>
+                                            <span class="switch-label">HP Stream</span>
+                                        </label>
+                                        <label class="mdn-switch modern-switch">
+                                            <input type="radio" name="switchr" disabled>
+                                            <span class="switch-toggle"></span>
+                                            <span class="switch-label">LG Gram</span>
+                                        </label>                                        
+                                        <label class="mdn-switch modern-switch">
+                                            <input type="radio" name="switchr" disabled>
+                                            <span class="switch-toggle"></span>
+                                            <span class="switch-label">Dell XPS</span>
+                                        </label>
+                                    </div><!-- mdn-group -->  
+                                </div><!-- end col-4 -->                            
+                            </div><!-- end form-row -->
+                        </div>                           
+                    </fieldset>
+                        
+                    <div class="mdn-footer">
+                        <button type="button" class="mdn-button" disabled>Basic</button>
+                        <button type="button" class="mdn-button btn-flat" disabled>Flat</button>
+                        <button type="button" class="mdn-button btn-primary" disabled>Disabled</button>
+                    </div>
+                </form>    
+            </div><!-- modern-container -->
+        </div><!-- modern-forms -->
+    </body>
+</html>

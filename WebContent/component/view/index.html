@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery仿新浪微博用户图文混排左右切换效果 - xw素材网</title>
+<link href="css/zzsc.css" type="text/css" rel="stylesheet" />
+<script src="js/jquery-1.4.1.min.js" type=text/javascript></script>
+<script src="js/zzsc.js" type=text/javascript></script>
+</head>
+<body>
+<div class="uldiv">
+	<div class="btndiv">
+		<strong>线下不知道怎么搭讪？先在微博上打声招呼吧~</strong>
+		<a class="abtn aleft" href="#left">左移</a>
+		<a class="abtn aright" href="#right">右移</a>
+	</div>
+	<div class="scrollcontainer">
+		<ul>
+			<li><img src="images/img01.gif" /></li>
+			<li><img src="images/img02.gif" /></li>
+			<li><img src="images/img01.gif" /></li>
+			<li><img src="images/img02.gif" /></li>
+		</ul>
+	</div>
+	<a class="gzbtn" href="http://www.xwcms.net/">关注他们</a>
+</div>
+<script type="text/javascript">
+$(function(){
+	$(".uldiv").Xslider({
+		unitdisplayed:1,
+		numtoMove:1,
+		speed:300,
+		scrollobjSize:Math.ceil($(".uldiv").find("li").length/1)*690
+	})
+})
+</script>
+
+</body>
+</html>

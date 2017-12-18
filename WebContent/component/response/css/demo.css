@@ -1,0 +1,44 @@
+/* default styles for the demo pages. */
+.demo-wrapper,
+.demo-options {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.demo-wrapper {
+	margin: 0 auto;
+	width: 90%;
+	min-height: 100%;
+	padding: 100px 50px;
+}
+
+.demo-options {
+	padding: 20px;
+	width: 100%;
+	min-width: 250px;
+	background: #fff;
+	margin-bottom: 20px;
+}
+
+.demo-options > label {
+	display: inline-block;
+	margin-right: 20px;
+	line-height: 20px;
+	cursor: pointer;
+}
+
+.demo-options > label > select,
+.demo-options > label > input {
+	margin: 0;
+	font-family: sans-serif;
+	font-size: 14px;
+	vertical-align: middle;
+}
+.demo-options > label > input[type="checkbox"],
+.demo-options > label > input[type="radio"] {
+	vertical-align: text-bottom;
+	margin-right: 10px;
+	width: 16px;
+	height: 16px;
+}

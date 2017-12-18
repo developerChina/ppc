@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Order Form </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/modernforms.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+    </head>
+    <body class="mdn-bg">
+        <div class="modern-forms">
+        	<div class="modern-container">
+                <form>
+                    <fieldset>
+                        <div class="form-row">
+                            <div class="col col-6">
+                                <div class="field-group prepend-icon">
+                                    <input type="text" class="mdn-input" placeholder="Enter firstname">
+                                    <label class="mdn-label">First Name</label>
+                                    <span class="mdn-icon"><i class="fa fa-male"></i></span>
+                                    <span class="mdn-bar"></span>
+                                </div>
+                            </div><!-- end col-6 -->
+                            <div class="col col-6">
+                                <div class="field-group prepend-icon">
+                                    <input type="text" class="mdn-input" placeholder="Enter lastname">
+                                    <label class="mdn-label">Last Name</label>
+                                    <span class="mdn-icon"><i class="fa fa-male"></i></span>
+                                    <span class="mdn-bar"></span>
+                                </div>  
+                            </div><!-- end col-6 -->
+                        </div><!-- end form-row -->
+                        <div class="form-row">
+                            <div class="col col-6">
+                                <div class="field-group prepend-icon">
+                                    <input type="email" class="mdn-input" placeholder="Enter email address">
+                                    <label class="mdn-label">Email Address</label>
+                                    <span class="mdn-icon"><i class="fa fa-envelope"></i></span>
+                                    <span class="mdn-bar"></span>
+                                </div>
+                            </div><!-- end col-6 -->
+                            <div class="col col-6">
+                                <div class="field-group prepend-icon">
+                                    <input type="tel" class="mdn-input" placeholder="Enter mobile no.">
+                                    <label class="mdn-label">Mobile Number</label>
+                                    <span class="mdn-icon"><i class="fa fa-mobile-phone"></i></span>
+                                    <span class="mdn-bar"></span>
+                                </div>  
+                            </div><!-- end col-6 -->
+                        </div><!-- end form-row -->                    
+                        <div class="form-row">
+                            <div class="col col-6">
+                                <div class="field-group mdn-select">
+                                    <select id="service" name="service">
+                                        <option value="">Select a service</option>
+                                        <option value="WordPress"> WordPress Development</option>
+                                        <option value="Custom CMS"> Custom CMS Devolopment </option>
+                                        <option value="Front End"> Front End (HTML CSS JavaScript) Development</option>
+                                        <option value="Branding"> Corporate Branding </option>
+                                        <option value="Web App"> Bespoke Web Application </option>
+                                        <option value="Mobile App"> Mobile Application </option>
+                                        <option value="Logo"> Logo Design</option>
+                                    </select>
+                                    <label class="mdn-label">Select service</label>
+                                    <span class="mdn-bar"></span>
+                                </div> 
+                            </div><!-- end col-6 -->
+                            <div class="col col-6">
+                                <div class="field-group mdn-select">
+                                    <select id="budget" name="budget">
+                                        <option value="">Budget Range </option>
+                                        <option value="500-1000"> USD 500-1000 </option>
+                                        <option value="1000-1500"> USD 1000-1500 </option>
+                                        <option value="1500-3000"> USD 1500-3000 </option>
+                                        <option value="3000-5000"> 1500-3000 </option>
+                                        <option value="5000+"> USD 5000+ </option>
+                                    </select>
+                                    <label class="mdn-label">Select Budget</label>
+                                    <span class="mdn-bar"></span>
+                                </div>  
+                            </div><!-- end col-6 -->
+                        </div><!-- end form-row -->                  
+                    </fieldset>
+                        
+                    <fieldset>
+                        <div class="mdn-group">
+                            <label class="field-group mdn-upload">
+                                <input type="file" class="mdn-file" name="file" id="file" 
+                                onChange="document.getElementById('fileinput').value = this.value;">
+                                <input type="text" class="mdn-input" id="fileinput" placeholder="no file selected" readonly>
+                                <label class="mdn-label">Attach order files</label>
+                                <span class="mdn-bar"></span>
+                                <span class="mdn-button btn-primary"> Choose File </span>                            
+                          </label>
+                        </div><!-- end .mdn-group section -->
+                        <div class="field-group">
+                            <textarea class="mdn-textarea" placeholder="Enter details or comments"></textarea>
+                            <label class="mdn-label">Order details</label>
+                            <span class="mdn-bar"></span>
+                        </div><!-- end mdn-group -->                        
+                    </fieldset>
+                    
+                    <div class="mdn-footer">
+                        <button type="submit" class="mdn-button btn-primary">Order Now</button>
+                        <button type="reset" class="mdn-button btn-flat">Cancel</button>
+                    </div>
+                </form>    
+            </div><!-- modern-container -->
+        </div><!-- modern-forms -->
+    </body>
+</html>

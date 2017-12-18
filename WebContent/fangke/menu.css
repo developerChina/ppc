@@ -1,0 +1,138 @@
+.sidebar {
+	margin: 10px auto 0;
+}
+/* ÇÐ»»µ¼º½ÑùÊ½ */
+.sidebar_tab {
+	float: left;
+	width: 35px;
+}
+
+.sidebar_tab li {
+	padding: 5px;
+	border: 1px solid #ccc;
+	background: #fff;
+}
+
+.sidebar_tab a {
+	font-size: 14px;
+	font-weight: bold;
+	color: #ddd;
+}
+
+.sidebar_tab li:hover a {
+	color: #fff;
+}
+
+.sidebar_tab_all a {
+	color: #5a4e4d;
+}
+
+li.sidebar_tab_cur {
+	margin-left: -7px;
+	padding-left: 12px;
+	-moz-border-radius: 8px 0 0 8px; /* FFä¯ÀÀÆ÷µÍ°æ±¾ Ô²½Ç */
+	-webkit-border-radius: 8px 0 0 8px; /* ChromeºÍSafariä¯ÀÀÆ÷ Ô²½Ç */
+	border-radius: 8px 0 0 8px;
+	behavior: url(../js/tool_iecss3.htc); /* IEä¯ÀÀÆ÷ Ô²½Ç */
+}
+
+li.sidebar_tab_cur a {
+	color: #fff;
+}
+
+.sidebar_tab_all:hover, .sidebar_tab_all.sidebar_tab_cur {
+	background: #5a4e4d;
+}
+
+.sidebar_tab_appliance a {
+	color: #3a4e8a;
+}
+
+.sidebar_tab_appliance:hover, .sidebar_tab_appliance.sidebar_tab_cur {
+	background: #3a4e8a;
+}
+
+.sidebar_tab_shop a {
+	color: #c17987;
+}
+
+.sidebar_tab_shop:hover, .sidebar_tab_shop.sidebar_tab_cur {
+	background: #c17987;
+}
+
+.sidebar_tab_print a {
+	color: #d1bb79;
+}
+
+.sidebar_tab_print:hover, .sidebar_tab_print.sidebar_tab_cur {
+	background: #d1bb79;
+}
+/* Ö÷ÒªÄÚÈÝÇøÑùÊ½ */
+.sidebar_main {
+	float: left;
+	margin-top: -30px;
+	width: 300px;
+}
+
+.sidebar_main h2 {
+	padding-left: 10px;
+	line-height: 30px;
+	color: #ccc;
+}
+
+.sidebar_main ul li {
+	position: relative;
+	padding: 5px 0 5px 10px;
+	border-bottom: 1px solid #666;
+}
+
+.sidebar_main_all li {
+	background: #877e7d;
+}
+
+.sidebar_main_all h2, .sidebar_main_all li:hover {
+	background: #736867;
+}
+
+.sidebar_main_appliance li {
+	background: #688ac8;
+}
+
+.sidebar_main_appliance h2, .sidebar_main_appliance li:hover {
+	background: #5568a3;
+}
+
+.sidebar_main_shop li {
+	background: #e68786;
+}
+
+.sidebar_main_shop h2, .sidebar_main_shop li:hover {
+	background: #bd7382;
+}
+
+.sidebar_main li:hover em {
+	display: none;
+}
+
+.sidebar_main ul li a {
+	padding-right: 10px;
+}
+
+.sidebar_main a {
+	font-size: 12px;
+}
+
+.sidebar_main a:hover {
+	text-decoration: underline;
+}
+
+.sidebar_main h3 em {
+	float: right;
+	margin-right: 20px;
+	font-style: normal;
+	color: #666;
+}
+
+.dowebok {
+	
+}

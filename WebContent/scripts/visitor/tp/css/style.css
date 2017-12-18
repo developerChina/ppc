@@ -1,0 +1,33 @@
+﻿@charset "utf-8";
+
+*{margin:0px;padding:0px;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
+.center{margin:0 auto;}
+body{background-color:#fff;font-size:14px;font-family:"微软雅黑",Arial, Helvetica, sans-serif,"宋体";}
+div,ul,li,dl,dd,dt,p{list-style:none; margin:0px; padding:0px; font-weight:normal; border:0px;}
+div,p,img,ul,li,dl,dt,dd,h1,h3,h2,h5,h4,h6{margin: 0px;padding: 0px;font-size: 12px;font-family: "微软雅黑"; line-height:20px;border: 0 none;font-weight:normal;}
+
+A {/*COLOR:#000; */TEXT-DECORATION: none;}
+A:visited {/*COLOR: #000;*/ TEXT-DECORATION: none;}
+A:hover {TEXT-DECORATION: none;}
+img{border:0px;}
+.fs{ color:#ff7cba;}
+
+.index_zhuanjia{ width:1228px; overflow:hidden;margin:40px auto 0 auto;}
+.index_zhuanjia_pic{ width:949px; height:483px; overflow:hidden; float:left;position:relative;}
+.index_zhuanjia_pic ul{height:377px;position:absolute; left:0;}
+.index_zhuanjia_pic li{width:949px; height:483px; overflow:hidden;position:relative;float:left;}
+
+.index_zhuanjia_left_inc{ width:32px; height:41px; position:absolute;left:0px;top:195px; cursor:pointer;background:url(../images/float_left_inc.png) left top no-repeat; z-index:9}
+.index_zhuanjia_right_inc{ width:32px; height:41px; position:absolute;right:0px;top:195px; cursor:pointer;background:url(../images/float_right_inc.png) left top no-repeat; z-index:9}
+
+.index_zhuanjia_list{ width:260px;height:483px; overflow:hidden; float:right;}
+.index_zhuanjia_lists{width:260px; height:428px; overflow:hidden;position:relative;}
+.index_zhuanjia_lists ul{ width:260px; height:428px;position:absolute;overflow:hidden;}
+.index_zhuanjia_lists ul li{ width:260px; height:98px; padding-bottom:9px;position:relative; }
+.index_zhuanjia_lists ul li.on dd img{ width:96px; height:96px; border:1px #4273b0 solid;}
+.index_zhuanjia_lists ul li dd{ width:98px; height:98px; overflow:hidden; float:left;}
+.index_zhuanjia_lists ul li dd img{ width:96px; height:96px; border:1px #e8e8e8 solid;}
+.index_zhuanjia_lists ul li dt{ width:152px; height:26px; overflow:hidden; float:right; font-size:18px; padding-top:23px;}
+.index_zhuanjia_lists ul li dl{ width:152px; height:26px; overflow:hidden; float:right; color:#7a7a7a;}
+.index_zhuanjia_pre{ width:260px; height:23px; overflow:hidden; cursor:pointer;background:url(../images/index_zhuanjia_pre.png) no-repeat left top;}
+.index_zhuanjia_next{ width:260px; height:23px; overflow:hidden; cursor:pointer;background:url(../images/index_zhuanjia_next.png) no-repeat left top;}
