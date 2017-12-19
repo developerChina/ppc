@@ -45,6 +45,18 @@ public class EmployeeDynaSqlProvider {
 					if(employee.getSex()!= null && employee.getSex() != 0){
 						WHERE("sex = #{employee.sex}");
 					}
+					if(employee.getAge()!= null && ! employee.getAge().equals("")){
+						WHERE("sex = #{employee.age}");
+					}
+					if(employee.getCompany()!= null && ! employee.getCompany().equals("")){
+						WHERE("sex = #{employee.company}");
+					}
+					if(employee.getStartvalidity()!= null && ! employee.getStartvalidity().equals("")){
+						WHERE("sex = #{employee.startvalidity}");
+					}
+					if(employee.getEndvalidity()!= null && ! employee.getEndvalidity().equals("")){
+						WHERE("sex = #{employee.endvalidity}");
+					}
 				}
 			}
 		}.toString();
@@ -112,18 +124,16 @@ public class EmployeeDynaSqlProvider {
 				if(employee.getPhone()!= null){
 					VALUES("phone", "#{phone}");
 				}
-				if(employee.getQqNum()!= null){
-					VALUES("qq_num", "#{qqNum}");
+				if(employee.getCompany()!= null){
+					VALUES("company", "#{company}");
 				}
-				if(employee.getEmail()!= null){
-					VALUES("email", "#{email}");
+				if(employee.getAge()!= null){
+					VALUES("age", "#{age}");
 				}
 				if(employee.getSex()!= null){
 					VALUES("sex", "#{sex}");
 				}
-				if(employee.getParty()!= null){
-					VALUES("party", "#{party}");
-				}
+				
 				if(employee.getBirthday()!= null){
 					VALUES("birthday", "#{birthday}");
 				}
@@ -133,12 +143,15 @@ public class EmployeeDynaSqlProvider {
 				if(employee.getEducation()!= null){
 					VALUES("education", "#{education}");
 				}
-				if(employee.getSpeciality()!= null){
-					VALUES("speciality", "#{speciality}");
+				if(employee.getStartvalidity()!= null){
+					VALUES("startvalidity", "#{startvalidity}");
 				}
-				if(employee.getHobby()!= null){
+				if(employee.getEndvalidity()!= null){
+					VALUES("endvalidity", "#{endvalidity}");
+				}
+				/*if(employee.getHobby()!= null){
 					VALUES("hobby", "#{hobby}");
-				}
+				}*/
 				if(employee.getRemark()!= null){
 					VALUES("remark", "#{remark}");
 				}
@@ -156,6 +169,12 @@ public class EmployeeDynaSqlProvider {
 				}
 				if(employee.getCarno()!= null){
 					VALUES("carno", "#{carno}");
+				}
+				if(employee.getIcno()!= null){
+					VALUES("icno", "#{icno}");
+				}
+				if(employee.getLicno()!= null){
+					VALUES("licno", "#{licno}");
 				}
 			}
 		}.toString();
@@ -184,18 +203,16 @@ public class EmployeeDynaSqlProvider {
 				if(employee.getPhone()!= null){
 					SET(" phone = #{phone} ");
 				}
-				if(employee.getQqNum()!= null){
-					SET(" qq_num = #{qqNum} ");
+				if(employee.getCompany()!= null){
+					SET(" company = #{company} ");
 				}
-				if(employee.getEmail()!= null){
-					SET(" email = #{email} ");
+				if(employee.getAge()!= null){
+					SET(" age = #{age} ");
 				}
 				if(employee.getSex()!= null){
 					SET(" sex = #{sex} ");
 				}
-				if(employee.getParty()!= null){
-					SET(" party = #{party} ");
-				}
+				
 				if(employee.getBirthday()!= null){
 					SET(" birthday = #{birthday} ");
 				}
@@ -205,12 +222,15 @@ public class EmployeeDynaSqlProvider {
 				if(employee.getEducation()!= null){
 					SET(" education = #{education} ");
 				}
-				if(employee.getSpeciality()!= null){
-					SET(" speciality = #{speciality} ");
+				if(employee.getStartvalidity()!= null){
+					SET(" startvalidity = #{startvalidity} ");
 				}
-				if(employee.getHobby()!= null){
+				if(employee.getEndvalidity()!= null){
+					SET(" endvalidity = #{endvalidity} ");
+				}
+				/*if(employee.getHobby()!= null){
 					SET(" hobby = #{hobby} ");
-				}
+				}*/
 				if(employee.getRemark()!= null){
 					SET(" remark = #{remark} ");
 				}
@@ -231,6 +251,12 @@ public class EmployeeDynaSqlProvider {
 				}
 				if(employee.getCarstatus()!= null){
 					SET(" carstatus = #{carstatus} ");
+				}
+				if(employee.getIcno()!= null){
+					SET(" icno = #{icno} ");
+				}
+				if(employee.getLicno()!= null){
+					SET(" licno = #{licno} ");
 				}
 				WHERE(" id = #{id} ");
 			}

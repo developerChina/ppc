@@ -31,11 +31,11 @@
 				var msg = "";
 				var name = $("#name");
 				var cardId = $("#cardId");
-				var email = $("#email");
+				var age = $("#age");
 				var phone = $("#phone");
 				var tel = $("#tel");
-				var qqNum = $("#qqNum");
-				var postCode = $("#postCode");
+				var company = $("#company");
+				//var postCode = $("#postCode");
 				var job_id = $("#job_id");
 				var dept_id = $("#dept_id");
 				if ($.trim(name.val()) == ""){
@@ -47,22 +47,22 @@
 				}else if (!/^[1-9]\d{16}[0-9A-Za-z]$/.test($.trim(cardId.val()))){
 					msg = "身份证号码格式不正确！";
 					cardId.focus();
-				}else if ($.trim(email.val()) != "" && !/^\w+@\w{2,3}\.\w{2,6}$/.test($.trim(email.val()))){
-					msg = "邮箱格式不正确！";
-					email.focus();
+				}else if ($.trim(age.val()) == ""){
+					msg = "年龄不能为空！";
+					age.focus();
 				}else if ($.trim(phone.val()) != "" && !/^1[3|5|8]\d{9}$/.test($.trim(phone.val()))){
 					msg = "手机号码格式不正确！";
 					phone.focus();
 				}else if ($.trim(tel.val()) != "" && !/^0\d{2,3}-?\d{7,8}$/.test($.trim(tel.val()))){
 					msg = "电话号码格式不正确！";
 					tel.focus();
-				}else if ($.trim(qqNum.val()) != "" && !/^\d{6,}$/.test($.trim(qqNum.val()))){
-					msg = "QQ号码格式不正确！";
-					qqNum.focus();
-				}else if ($.trim(postCode.val()) != "" && !/^[1-9]\d{5}$/.test($.trim(postCode.val()))){
+				}else if ($.trim(company.val()) == ""){
+					msg = "单位不能为空！";
+					company.focus();
+				}/* else if ($.trim(postCode.val()) != "" && !/^[1-9]\d{5}$/.test($.trim(postCode.val()))){
 					msg = "邮政编码格式不正确！";
 					postCode.focus();
-				}else if ($.trim(job_id.val()) == ""){
+				} */else if ($.trim(job_id.val()) == ""){
 					msg = "职位不能为空！";
 				}else if ($.trim(dept_id.val()) == ""){
 					msg = "部门不能为空！";
@@ -81,7 +81,7 @@
 	</script>
 </head>
 <body>
-<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
   <tr><td height="10"></td></tr>
   <tr>
     <td width="15" height="32"><img src="${ctx}/images/main_locleft.gif" width="15" height="32"></td>
@@ -89,7 +89,7 @@
 	<td width="15" height="32"><img src="${ctx}/images/main_locright.gif" width="15" height="32"></td>
   </tr>
 </table>
-<table width="100%" height="90%" border="0" cellpadding="5" cellspacing="0" class="main_tabbor">
+<table width="100%" height="90%" border="0" cellpadding="5" cellspacing="0" class="main_tabbor" >
   <tr valign="top">
     <td>
     	 <form action="${ctx}/employee/addEmployee" id="employeeForm" method="post">
@@ -100,7 +100,8 @@
 		    	<table>
 		    		<tr>
 		    			<td class="font3 fftd">姓名：<input type="text" name="name" id="name" size="20"/></td>
-		    			<td class="font3 fftd">身份证号码：<input type="text" name="cardId" id="cardId" size="20"/></td>
+		    			<td class="font3 fftd">单位：<input name="company" id="company" size="20"></td>
+		    			<td class="font3 fftd">身份证号：<input type="text" name="cardId" id="cardId" size="20"/></td>
 		    		</tr>
 		    		<tr>
 		    			<td class="font3 fftd">性别：
@@ -109,83 +110,53 @@
 					    			<option value="1">男</option>
 					    			<option value="2">女</option>
 					    		</select></td>
-		    			<td class="font3 fftd">职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;位：
+		    			<td class="font3 fftd">职位：
 		    			 <select name="job_id" id="job_id" style="width:143px;">
 					    			<option value="">--请选择职位--</option>
 					    			<c:forEach items="${requestScope.jobs }" var="job">
 					    				<option value="${job.id }">${job.name }</option>
 					    			</c:forEach>
 					    		</select>
-					    </td>
-		    		</tr>
-		    		<tr>
-		    			<td class="font3 fftd">学历：<input name="education" id="education" size="20"/></td>
-		    			<td class="font3 fftd">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：<input name="email" id="email" size="20"/></td>
-		    		</tr>
-		    		<tr>
-		    			<td class="font3 fftd">手机：<input name="phone" id="phone" size="20"/></td>
-		    			<td class="font3 fftd">电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话：<input name="tel" id="tel" size="20"/></td>
-		    		</tr>
-		    		
-		    	</table>
-		    </td></tr>
-			<tr><td class="main_tdbor"></td></tr>
-			
-			<tr>
-				<td class="font3 fftd">
-					政治面貌：<input name="party" id="party" size="40"/>&nbsp;&nbsp;
-					QQ&nbsp;&nbsp;号码：<input name="qqNum" id="qqNum" size="20"/>
-				</td>
-			</tr>
-			<tr><td class="main_tdbor"></td></tr>
-			
-			<tr>
-				<td class="font3 fftd">
-					联系地址：<input name="address" id="address" size="40"/>&nbsp;&nbsp;
-					邮政编码：<input name="postCode" id="postCode" size="20"/>
-				</td>
-			</tr>
-			<tr><td class="main_tdbor"></td></tr>
-			
-			<tr>
-				<td class="font3 fftd">
-					出生日期：<input class="Wdate" onfocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd'});" 
-					name="birthday" id="birthday" size="40"/>&nbsp;&nbsp;
-					民&nbsp;&nbsp;&nbsp;&nbsp;族：<input name="race" id="race" size="20"/>
-				</td>
-			</tr>
-			<tr><td class="main_tdbor"></td></tr>
-			
-			<tr>
-				<td class="font3 fftd">
-					所学专业：<input  name="speciality" id="speciality" size="40"/>&nbsp;&nbsp;
-					爱&nbsp;&nbsp;&nbsp;&nbsp;好：<input name="hobby" id="hobby" size="20"/>
-				</td>
-			</tr>
-			<tr><td class="main_tdbor"></td></tr>
-			
-			<tr>
-				<td class="font3 fftd">
-					备&nbsp;&nbsp;&nbsp;&nbsp;注：<input name="remark" id="remark" size="40"/>&nbsp;
-					 所属部门：
+					    </td >
+					    <td class="font3 fftd">
+					    	 所属部门：
 					<select  name="dept_id" id="dept_id" style="width:143px;">
 						   <option value="">--部门选择--</option>
 						   <c:forEach items="${requestScope.depts }" var="dept">
 			    				<option value="${dept.id }">${dept.name }</option>
 			    			</c:forEach>
 					</select>
-				</td>
-			</tr>
-			<tr><td class="main_tdbor"></td></tr>
-			<td class="font3 fftd">
-				员工IC卡号：<input name="cardno" id="cardno" size="20"/>
-				员工远距离卡号：<input name="cardno" id="cardno" size="20"/>
-				<input type="button" onclick=""  value="&nbsp;读取 &nbsp; ">
-				<!--&nbsp;车&nbsp;牌&nbsp;号：&nbsp;<input name="carno" id="carno" size="20"/> -->
-			</td>
-			<tr><td class="main_tdbor"></td></tr>
-			
-			<tr><td align="left" class="fftd">
+					    </td>
+		    		</tr>
+		    		<tr>
+		    			<td class="font3 fftd">学历：<input name="education" id="education" size="20"/></td>
+		    			<td class="font3 fftd">年龄：<input name="age" id="age" size="20"/></td>
+		    			<td class="font3 fftd">
+							联系地址：<input name="address" id="address" size="20"/>
+						</td>
+		    		</tr>
+		    		<tr>
+		    			<td class="font3 fftd">手机：<input name="phone" id="phone" size="20"/></td>
+		    			<td class="font3 fftd">电话：<input name="tel" id="tel" size="20"/></td>
+		    			<td class="font3 fftd">邮政编码：<input name="postCode" id="postCode" size="20"/></td>
+		    		</tr>
+		    			<tr>
+				<td class="font3 fftd">备注：<input name="remark" id="remark" size="20"/></td>
+				<td class="font3 fftd">民族：<input name="race" id="race" size="20"/></td>
+				<td class="font3 fftd">出生日期：<input class="Wdate" onfocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd'});" 
+					name="birthday" id="birthday" size="20"/></td>
+						</tr>
+						<tr>
+							<td class="font3 fftd">IC卡号：<input name="icno" id="icno" size="20"/></td>
+							<td class="font3 fftd">远距离卡号：<input name="licno" id="licno" size="10" /><input type="button" onclick=""  value="&nbsp;读取 &nbsp; "></td>
+							<td class="font3 fftd">有效期：<input class="Wdate" onfocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd'});" 
+					name="startvalidity" id="startvalidity" size="10px"/>--<input class="Wdate" onfocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd'});" 
+					name="endvalidity" id="endvalidity" size="10px"/></td>
+						</tr>
+						<!-- 	爱&nbsp;&nbsp;&nbsp;&nbsp;好：<input name="hobby" id="hobby" size="20"/> -->
+		    	</table>
+		    </td></tr>
+			<tr><td align="center" class="fftd">
 			<input type="submit" value="&nbsp;添加&nbsp;">&nbsp;&nbsp;<input type="button" onclick="javascript:window.history.back(-1);"  value="&nbsp;返回 &nbsp; "></td></tr>
 		  </table>
 		 </form>

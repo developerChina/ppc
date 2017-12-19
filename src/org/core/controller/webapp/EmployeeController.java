@@ -327,8 +327,8 @@ public class EmployeeController {
 		// 定义表格行索引
 		int index = 0;
 		// 添加头信息
-		String[] titles = { "名称", "身份证号", "邮政编码", "电话", "手机", "qq号码", "邮箱", "性别", "政治面貌", "生日", "民族", "学历", "专业", " 爱好",
-				"备注", "卡号", "车牌号", "地址", "部门", "职位"};
+		String[] titles = { "名称", "身份证号", "邮政编码", "电话", "手机", "单位", "年龄", "性别",  "生日", "民族", "学历", "开始有效期", 
+				"备注", "卡号", "车牌号", "地址", "部门", "职位","结束有效期"};
 		HSSFRow row_head = sheet.createRow(index++);
 		for (int i = 0; i < titles.length; i++) {
 			HSSFCell cell = row_head.createCell(i);
@@ -452,7 +452,7 @@ public class EmployeeController {
 			Row row = sheet.getRow(0);
 			int colNum = row.getPhysicalNumberOfCells();
 			List<Map<Integer, String>> list = ExcelUtil.readSheet(sheet, colNum);
-			// 名称,身份证号,邮政编码,电话,手机,qq号码,邮箱,性别,政治面貌,生日,民族,学历,专业,爱好,备注,卡号,车牌号,部门,职位
+			// 名称,身份证号,邮政编码,电话,手机,单位,年龄,性别,政治面貌,生日,民族,学历,专业,爱好,备注,卡号,车牌号,部门,职位
 			for (Map<Integer, String> data : list) {
 				Employee employee = new Employee();
 				for (Integer key : data.keySet()) {
@@ -461,19 +461,20 @@ public class EmployeeController {
 					employee.setPostCode(data.get(2));
 					employee.setTel(data.get(3));
 					employee.setPhone(data.get(4));
-					employee.setQqNum(data.get(5));
-					employee.setEmail(data.get(6));
+					employee.setCompany(data.get(5));
+					employee.setAge(data.get(6));
 					if ("女".equals(data.get(7))) {
 						employee.setSex(0);
 					} else {
 						employee.setSex(1);
 					}
-					employee.setParty(data.get(8));
+					
 					employee.setBirthday(DateUtil.StringToDate(data.get(9), DateStyle.YYYY_MM_DD_EN));
 					employee.setRace(data.get(10));
 					employee.setEducation(data.get(11));
-					employee.setSpeciality(data.get(12));
-					employee.setHobby(data.get(13));
+					employee.setStartvalidity(DateUtil.StringToDate(data.get(12), DateStyle.YYYY_MM_DD_EN));
+					employee.setEndvalidity(DateUtil.StringToDate(data.get(20), DateStyle.YYYY_MM_DD_EN));
+					
 					employee.setRemark(data.get(14));
 					employee.setCardno(data.get(15));
 					employee.setCarno(data.get(16));

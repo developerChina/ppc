@@ -140,6 +140,12 @@
 				    <table width="100%" border="0" cellpadding="0" cellspacing="0">
 					  <tr>
 					    <td class="font3">
+					  		  所属部门：&nbsp;<select  name="dept_id" style="width:166px;">
+								   <option value="0">--部门选择--</option>
+								   <c:forEach items="${requestScope.depts }" var="dept">
+					    				<option value="${dept.id }">${dept.name }</option>
+					    			</c:forEach>
+							</select>&nbsp;
 					    	职位：
 							    <select name="job_id" style="width:143px;">
 					    			<option value="0">--请选择职位--</option>
@@ -148,15 +154,18 @@
 					    			</c:forEach>
 					    		</select>
 					    	姓名：<input type="text" name="name">
-					    	身份证号码：<input type="text" name="cardId" maxlength="18">
+					    	手机：<input type="text" name="phone">
+					    	<!-- 年龄：<input type="text" name="age"> -->
+					    	<!-- 身份证号码：<input type="text" name="cardId" maxlength="18"> -->
 					    	<input type="submit" value="&nbsp;搜索&nbsp;"/>
 					    	<input id="delete" type="button" value="&nbsp;删除&nbsp;"/>
 					    	<input id="add" type="button" value="&nbsp;添加&nbsp;"/>
 					    	<input id="import" type="button" value="&nbsp;导入&nbsp;"/>
+					    	<input id="banzheng" type="button" value="&nbsp; 制卡/证  &nbsp;"/>
 					    </td>
 					  </tr>
-					  <tr><td class="font3"><hr></td></tr>
-					  <tr>
+					 <!--  <tr><td class="font3"><hr></td></tr> -->
+					 <!--  <tr>
 					    <td class="font3">
 					    	卡状态：
 					    		<select name="carstatus" style="width:130px;">
@@ -164,20 +173,10 @@
 					    			<option value="1">已授权</option>
 					    			<option value="0">未授权</option>
 					    		</select>
-					    	手机：<input type="text" name="phone">
-					    	所属部门：&nbsp;<select  name="dept_id" style="width:166px;">
-								   <option value="0">--部门选择--</option>
-								   <c:forEach items="${requestScope.depts }" var="dept">
-					    				<option value="${dept.id }">${dept.name }</option>
-					    			</c:forEach>
-							</select>&nbsp;
-					    	
-					    	<!-- <input id="bingd" type="button" value="&nbsp;绑定权限  &nbsp;"/>
-					    	<input id="unbingd" type="button" value="&nbsp;解除绑定 &nbsp;"/> -->
-					    	
-					    	<input id="banzheng" type="button" value="&nbsp; 制卡/证  &nbsp;"/>
+					    	<input id="bingd" type="button" value="&nbsp;绑定权限  &nbsp;"/>
+					    	<input id="unbingd" type="button" value="&nbsp;解除绑定 &nbsp;"/>
 					    </td>
-					  </tr>
+					  </tr> -->
 					</table>
 				</form>
 			  </td>
@@ -193,12 +192,15 @@
 		    <tr class="main_trbg_tit" align="center">
 			  <td><input type="checkbox" name="checkAll" id="checkAll"></td>
 			  <td>姓名</td>
+			  <td>年龄</td>
 			  <td>手机号码</td>
-			  <td>员工卡号</td>
-			  <td>卡授权状态</td>
+			  <td>员工IC卡号</td>
+			  <td>员工远距离卡号</td>
+			  <td>单位</td>
+			 <!--  <td>卡授权状态</td> -->
 			  <td>职位</td>
-			  <td>学历</td>
-			  <td>身份证号码</td>
+			 <!--  <td>学历</td>
+			  <td>身份证号码</td> -->
 			  <td>部门</td>
 			  <!-- 
 			  <td>车牌号码</td>
@@ -210,17 +212,20 @@
 				<tr id="data_${stat.index}" class="main_trbg" align="center">
 				  <td><input type="checkbox" id="box_${stat.index}" value="${employee.id}"></td>
 				  <td>${employee.name }</td>
+				  <td>${employee.age}</td>
 				  <td>${employee.phone }</td>
-				  <td>${employee.cardno }</td>
-				  <td>
+				  <td>${employee.icno }</td>
+				   <td>${employee.licno }</td>
+				    <td>${employee.company }</td>
+				<%--   <td>
 			        <c:choose>
 			        	<c:when test="${employee.carstatus == 1 }"><font color="green">已授权</font></c:when>
 			        	<c:otherwise><font color="red">未授权</font></c:otherwise>
 			        </c:choose>
-				  </td>
+				  </td> --%>
 				  <td>${employee.job.name  }</td>
-				  <td>${employee.education }</td>
-				  <td>${employee.cardId }</td>
+				 <%--  <td>${employee.education }</td>
+				  <td>${employee.cardId }</td> --%>
 				  <td>${employee.dept.name }</td>
 				  <!--
 				  <td>${employee.carno }</td>

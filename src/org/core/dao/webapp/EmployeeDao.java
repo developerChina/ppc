@@ -33,9 +33,13 @@ public interface EmployeeDao {
 	@Results({
 		@Result(id=true,column="id",property="id"),
 		@Result(column="CARD_ID",property="cardId"),
+		@Result(column="LICNO",property="licno"),
+		@Result(column="ICNO",property="icno"),
 		@Result(column="POST_CODE",property="postCode"),
-		@Result(column="QQ_NUM",property="qqNum"),
+		@Result(column="COMPANY",property="company"),
 		@Result(column="BIRTHDAY",property="birthday",javaType=java.util.Date.class),
+		@Result(column="STARTVALIDITY",property="startvalidity",javaType=java.util.Date.class),
+		@Result(column="ENDVALIDITY",property="endvalidity",javaType=java.util.Date.class),
 		@Result(column="CREATE_DATE",property="createDate",javaType=java.util.Date.class),
 		@Result(column="DEPT_ID",property="dept",
 			one=@One(select="org.core.dao.webapp.DeptDao.selectById",
@@ -59,9 +63,13 @@ public interface EmployeeDao {
 	@Results({
 		@Result(id=true,column="id",property="id"),
 		@Result(column="CARD_ID",property="cardId"),
+		@Result(column="LICNO",property="licno"),
+		@Result(column="ICNO",property="icno"),
 		@Result(column="POST_CODE",property="postCode"),
-		@Result(column="QQ_NUM",property="qqNum"),
+		@Result(column="COMPANY",property="company"),
 		@Result(column="BIRTHDAY",property="birthday",javaType=java.util.Date.class),
+		@Result(column="STARTVALIDITY",property="startvalidity",javaType=java.util.Date.class),
+		@Result(column="ENDVALIDITY",property="endvalidity",javaType=java.util.Date.class),
 		@Result(column="CREATE_DATE",property="createDate",javaType=java.util.Date.class),
 		@Result(column="DEPT_ID",property="dept",one=@One(select="org.core.dao.webapp.DeptDao.selectById",fetchType=FetchType.EAGER)),
 		@Result(column="JOB_ID",property="job",one=@One(select="org.core.dao.webapp.JobDao.selectById",fetchType=FetchType.EAGER))
@@ -78,8 +86,12 @@ public interface EmployeeDao {
 		@Result(id=true,column="id",property="id"),
 		@Result(column="CARD_ID",property="cardId"),
 		@Result(column="POST_CODE",property="postCode"),
-		@Result(column="QQ_NUM",property="qqNum"),
+		@Result(column="LICNO",property="licno"),
+		@Result(column="ICNO",property="icno"),
+		@Result(column="COMPANY",property="company"),
 		@Result(column="BIRTHDAY",property="birthday",javaType=java.util.Date.class),
+		@Result(column="STARTVALIDITY",property="startvalidity",javaType=java.util.Date.class),
+		@Result(column="ENDVALIDITY",property="endvalidity",javaType=java.util.Date.class),
 		@Result(column="CREATE_DATE",property="createDate",javaType=java.util.Date.class),
 		@Result(column="DEPT_ID",property="dept",one=@One(select="org.core.dao.webapp.DeptDao.selectById",fetchType=FetchType.EAGER)),
 		@Result(column="JOB_ID",property="job",one=@One(select="org.core.dao.webapp.JobDao.selectById",fetchType=FetchType.EAGER))
@@ -92,8 +104,12 @@ public interface EmployeeDao {
 		@Result(id=true,column="id",property="id"),
 		@Result(column="CARD_ID",property="cardId"),
 		@Result(column="POST_CODE",property="postCode"),
-		@Result(column="QQ_NUM",property="qqNum"),
+		@Result(column="COMPANY",property="company"),
+		@Result(column="LICNO",property="licno"),
+		@Result(column="ICNO",property="icno"),
 		@Result(column="BIRTHDAY",property="birthday",javaType=java.util.Date.class),
+		@Result(column="STARTVALIDITY",property="startvalidity",javaType=java.util.Date.class),
+		@Result(column="ENDVALIDITY",property="endvalidity",javaType=java.util.Date.class),
 		@Result(column="CREATE_DATE",property="createDate",javaType=java.util.Date.class),
 		@Result(column="DEPT_ID",property="dept",one=@One(select="org.core.dao.webapp.DeptDao.selectById",fetchType=FetchType.EAGER)),
 		@Result(column="JOB_ID",property="job",one=@One(select="org.core.dao.webapp.JobDao.selectById",fetchType=FetchType.EAGER))
@@ -105,12 +121,19 @@ public interface EmployeeDao {
 		@Result(id=true,column="id",property="id"),
 		@Result(column="CARD_ID",property="cardId"),
 		@Result(column="POST_CODE",property="postCode"),
-		@Result(column="QQ_NUM",property="qqNum"),
+		@Result(column="LICNO",property="licno"),
+		@Result(column="ICNO",property="icno"),
+		@Result(column="COMPANY",property="company"),
 		@Result(column="BIRTHDAY",property="birthday",javaType=java.util.Date.class),
 		@Result(column="CREATE_DATE",property="createDate",javaType=java.util.Date.class),
+		@Result(column="STARTVALIDITY",property="startvalidity",javaType=java.util.Date.class),
+		@Result(column="ENDVALIDITY",property="endvalidity",javaType=java.util.Date.class),
 		@Result(column="DEPT_ID",property="dept",one=@One(select="org.core.dao.webapp.DeptDao.selectById",fetchType=FetchType.EAGER)),
 		@Result(column="JOB_ID",property="job",one=@One(select="org.core.dao.webapp.JobDao.selectById",fetchType=FetchType.EAGER))
 	})
 	List<Employee> getEmployeeesBy_phone(String phone);
+
+	@Select("select * from "+EMPLOYEETABLE+" where icno = #{cardNo} and carstatus= #{carstatus}")
+	List<Employee> findEmployeeByCardNo_carstatus(@Param("cardNo")String cardNo, @Param("carstatus")int carstatus);
 
 }

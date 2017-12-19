@@ -17,10 +17,24 @@ public class Employee implements java.io.Serializable{
 	private String postCode;	// 邮政编码
 	private String tel;			// 电话
 	private String phone;		// 手机
-	private String qqNum;		// qq
-	private String email;		// 邮箱
+	private String company;		// 单位
+	private String age;			// 年龄
 	private Integer sex;		// 性别
-	private String party;		// 政治面貌
+	private Integer icno;		//员工卡号
+	private Integer licno;		//员工远距离卡号
+	
+	public Integer getIcno() {
+		return icno;
+	}
+	public void setIcno(Integer icno) {
+		this.icno = icno;
+	}
+	public Integer getLicno() {
+		return licno;
+	}
+	public void setLicno(Integer licno) {
+		this.licno = licno;
+	}
 	/**
 	 *  使用@ModelAttribute接收参数时
 	 *  form表单中有日期,Spring不知道该如何转换,
@@ -30,8 +44,10 @@ public class Employee implements java.io.Serializable{
 	private java.util.Date birthday;	//生日
 	private String race;				// 名族
 	private String education;			// 学历
-	private String speciality;			// 专业
-	private String hobby;				// 爱好
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	private java.util.Date startvalidity;// 开始有效期
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	private java.util.Date endvalidity;// 结束有效期
 	private String remark;				// 备注
 	private java.util.Date createDate;	// 建档日期
 	private String cardno;				//员工卡号
@@ -99,17 +115,17 @@ public class Employee implements java.io.Serializable{
 	public String getPhone(){
 		return this.phone;
 	}
-	public void setQqNum(String qqNum){
-		this.qqNum = qqNum;
+	public void setCompany(String company){
+		this.company = company;
 	}
-	public String getQqNum(){
-		return this.qqNum;
+	public String getCompany(){
+		return this.company;
 	}
-	public void setEmail(String email){
-		this.email = email;
+	public void setAge(String age){
+		this.age = age;
 	}
-	public String getEmail(){
-		return this.email;
+	public String getAge(){
+		return this.age;
 	}
 	public void setSex(Integer sex){
 		this.sex = sex;
@@ -117,12 +133,7 @@ public class Employee implements java.io.Serializable{
 	public Integer getSex(){
 		return this.sex;
 	}
-	public void setParty(String party){
-		this.party = party;
-	}
-	public String getParty(){
-		return this.party;
-	}
+	
 	public void setBirthday(java.util.Date birthday){
 		this.birthday = birthday;
 	}
@@ -141,18 +152,13 @@ public class Employee implements java.io.Serializable{
 	public String getEducation(){
 		return this.education;
 	}
-	public void setSpeciality(String speciality){
-		this.speciality = speciality;
+	public void setStartvalidity(java.util.Date startvalidity){
+		this.startvalidity = startvalidity;
 	}
-	public String getSpeciality(){
-		return this.speciality;
+	public java.util.Date getStartvalidity(){
+		return this.startvalidity;
 	}
-	public void setHobby(String hobby){
-		this.hobby = hobby;
-	}
-	public String getHobby(){
-		return this.hobby;
-	}
+	
 	public void setRemark(String remark){
 		this.remark = remark;
 	}
@@ -184,17 +190,22 @@ public class Employee implements java.io.Serializable{
 	public void setCarstatus(Integer carstatus) {
 		this.carstatus = carstatus;
 	}
+	
+	
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", dept=" + dept + ", job=" + job
-				+ ", name=" + name + ", cardId=" + cardId + ", address="
-				+ address + ", postCode=" + postCode + ", tel=" + tel
-				+ ", phone=" + phone + ", qqNum=" + qqNum + ", email=" + email
-				+ ", sex=" + sex + ", party=" + party + ", birthday="
-				+ birthday + ", race=" + race + ", education=" + education
-				+ ", speciality=" + speciality + 
-				", hobby=" + hobby + ", remark=" + remark + ", createDate="
-				+ createDate + "]";
+		return "Employee [id=" + id + ", dept=" + dept + ", job=" + job + ", name=" + name + ", cardId=" + cardId
+				+ ", address=" + address + ", postCode=" + postCode + ", tel=" + tel + ", phone=" + phone + ", company="
+				+ company + ", age=" + age + ", sex=" + sex + ", icno=" + icno + ", licno=" + licno + ", birthday="
+				+ birthday + ", race=" + race + ", education=" + education + ", startvalidity=" + startvalidity
+				+ ", endvalidity=" + endvalidity + ", remark=" + remark + ", createDate=" + createDate + ", cardno="
+				+ cardno + ", carstatus=" + carstatus + ", carno=" + carno + "]";
+	}
+	public java.util.Date getEndvalidity() {
+		return endvalidity;
+	}
+	public void setEndvalidity(java.util.Date endvalidity) {
+		this.endvalidity = endvalidity;
 	}
 
 }
