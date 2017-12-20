@@ -21,7 +21,7 @@ import org.core.service.visitor.VisitorInfoService;
 import org.core.service.webapp.HrmService;
 import org.core.util.DateStyle;
 import org.core.util.DateUtil;
-import org.core.util.HttpClientUtil;
+import org.core.util.HttpKit;
 import org.core.util.JsonUtils;
 import org.core.util.PropUtil;
 import org.springframework.beans.BeanUtils;
@@ -162,9 +162,13 @@ public class BeisitedController {
 		recordBevisiteds.setBevisitedID(employee.getId()+"");   // varchar(32) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT '被访人ID' ,
 		recordBevisiteds.setBevisitedCardNo(employee.getCardno());	//varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL COMMENT '被访人卡号' ,
 		recordBevisiteds.setBevisitedName(employee.getName());   // varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT '被访人姓名' ,
-		recordBevisiteds.setDeptID(employee.getDept().getId()+"");   // varchar(32) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT '被访人部门ID' ,
-		recordBevisiteds.setDeptName(employee.getDept().getName());   // varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT '被访人姓名' ,
-		recordBevisiteds.setBevisitedPosition(employee.getJob().getName());   // varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL COMMENT '被访人职位' ,
+		if(employee.getDept()!=null){
+			recordBevisiteds.setDeptID(employee.getDept().getId()+"");   // varchar(32) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT '被访人部门ID' ,
+			recordBevisiteds.setDeptName(employee.getDept().getName());   // varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT '被访人姓名' ,
+		}
+		if(employee.getJob()!=null){
+			recordBevisiteds.setBevisitedPosition(employee.getJob().getName());   // varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL COMMENT '被访人职位' ,
+		}
 		recordBevisiteds.setBevisitedStatus("0");   // tinyint(4) NOT NULL DEFAULT 0 COMMENT '被访人状态（0=正常，1=离职.......）' ,
 		recordBevisiteds.setBevisitedTel(employee.getPhone());   // varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT '被访人手机号码' ,
 		recordBevisiteds.setBevisitedDoor("");   // varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT '被访人门禁' ,
@@ -256,11 +260,15 @@ public class BeisitedController {
 	 */
 	private void sendAudiSMS(String visitedName,String visitorName,String visitorDate,String recordid,String phoneNumbers){
 		//发送外网程序错误，需要把访问人和被访问人对调
-		HttpClientUtil.doGet(PropUtil.getSysValue("smsPath")+
-				"?visitedName="+visitorName+
-				"&visitorName="+visitedName+
-				"&visitorDate="+visitorDate+
-				"&recordid="+recordid+
-				"&phoneNumbers="+phoneNumbers);
+		try {
+			HttpKit.post(PropUtil.getSysValue("smsPath"), 
+					"visitedName="+visitorName+
+					"&visitorName="+visitedName+
+					"&visitorDate="+visitorDate+
+					"&recordid="+recordid+
+					"&phoneNumbers="+phoneNumbers,false);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
