@@ -49,6 +49,14 @@
 		var self = this;
 		this.tabs.forEach( function( tab, idx ) {
 			tab.addEventListener( 'click', function( ev ) {
+				if(idx=='1'){
+					
+					 if($("#visitorList").find("li").length == 0){
+						  alert("请先添加访客！");
+						  return;
+					  }			
+				}
+				
 				ev.preventDefault();
 				self._show( idx );
 			} );
